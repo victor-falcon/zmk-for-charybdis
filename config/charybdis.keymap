@@ -3,6 +3,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+
 
 //roll 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000 // 600
@@ -14,6 +20,23 @@
     flavor = "balanced";
     quick-tap-ms = <150>;
 };
+
+&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
+
+&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
+
+&msc {
+    acceleration-exponent = <0>;      // 0
+    time-to-max-speed-ms = <100>;       // 300
+    delay-ms = <0>;                   // 0
+};
+
+&mmv {
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <1>;
+    trigger-period-ms = <16>;
+};
+
 
 / {
     macros {
