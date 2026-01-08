@@ -8,12 +8,9 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
-
-
 //roll 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000 // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 12   // 10
-
 
 &lt {
     tapping-term-ms = <200>;
@@ -22,7 +19,6 @@
 };
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
@@ -66,7 +62,7 @@
     };
 
 
-// 上下滚动编码器行为
+// Vertical scroll encoder behavior
     scroll_vertical_encoder: scroll_vertical_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
@@ -74,7 +70,7 @@
         tap-ms = <100>;
     };
 
-    // 左右滚动编码器行为
+    // Horizontal scroll encoder behavior
     scroll_horizontal_encoder: scroll_horizontal_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
@@ -93,8 +89,8 @@
                               &kp LCTRL  &mkp MB1  &mkp MB2    &kp LGUI  &kp SPACE  &kp ENTER
             >;
 
-sensor-bindings = <&scroll_vertical_encoder>,   // 编码器1：上下滚动
-                             <&scroll_horizontal_encoder>;  // 编码器2：左右滚动            
+sensor-bindings = <&scroll_vertical_encoder>,   // Encoder 1: Vertical scroll
+                             <&scroll_horizontal_encoder>;  // Encoder 2: Horizontal scroll            
 
 //ec11-VOL：sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
