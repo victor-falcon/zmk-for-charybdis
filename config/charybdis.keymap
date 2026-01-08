@@ -171,8 +171,8 @@
         c_mouse_layer: c_mouse_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "C_MOUSE_LAYER";
-            #binding-cells = <0>;
-            bindings = <&mo 9>, <&kp C>;
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             quick-tap-ms = <200>;
@@ -181,8 +181,8 @@
         v_snipe_layer: v_snipe_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "V_SNIPE_LAYER";
-            #binding-cells = <0>;
-            bindings = <&mo 10>, <&kp V>;
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             quick-tap-ms = <200>;
@@ -215,7 +215,7 @@
             bindings = <
 &kp TAB          &kp Q        &lt 4 W      &kp E              &kp R              &kp T              &kp Y                &kp U             &kp I              &lt 4 O      &kp P                &kp BACKSPACE
 &kp ESCAPE       &hml LALT A  &hml LGUI S  &hml LEFT_SHIFT D  &hml LCTRL F       &kp G              &kp H                &hmr RCTRL J      &hmr RSHIFT K      &hmr LGUI L  &hmr LALT SEMICOLON  &sl 6
-&lt 5 LA(LG(A))  &kp Z        &kp X        &c_mouse_layer     &v_snipe_layer     &kp B              &kp N                &kp M             &kp COMMA          &kp DOT      &kp FSLH             &kp ENTER
+&lt 5 LA(LG(A))  &kp Z        &kp X        &c_mouse_layer 9 C  &v_snipe_layer 10 V  &kp B              &kp N                &kp M             &kp COMMA          &kp DOT      &kp FSLH             &kp ENTER
                                            &hold_lt 2 TAB     &hold_lt 1 ESCAPE  &key_lt 2 ENTER    &key_lt 2 BACKSPACE  &hold_lt 3 SPACE  &hold_lt 2 DELETE
             >;
 
