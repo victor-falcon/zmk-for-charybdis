@@ -167,6 +167,26 @@
             #binding-cells = <0>;
             bindings = <&kp NUMBER_6>, <&kp Z>;
         };
+
+        c_mouse_layer: c_mouse_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "C_MOUSE_LAYER";
+            #binding-cells = <0>;
+            bindings = <&mo 9>, <&kp C>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <200>;
+        };
+
+        v_snipe_layer: v_snipe_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "V_SNIPE_LAYER";
+            #binding-cells = <0>;
+            bindings = <&mo 10>, <&kp V>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <200>;
+        };
     };
 
     // Encoder behaviors
@@ -195,7 +215,7 @@
             bindings = <
 &kp TAB          &kp Q        &lt 4 W      &kp E              &kp R              &kp T              &kp Y                &kp U             &kp I              &lt 4 O      &kp P                &kp BACKSPACE
 &kp ESCAPE       &hml LALT A  &hml LGUI S  &hml LEFT_SHIFT D  &hml LCTRL F       &kp G              &kp H                &hmr RCTRL J      &hmr RSHIFT K      &hmr LGUI L  &hmr LALT SEMICOLON  &sl 6
-&lt 5 LA(LG(A))  &kp Z        &kp X        &kp C              &kp V              &kp B              &kp N                &kp M             &kp COMMA          &kp DOT      &kp FSLH             &kp ENTER
+&lt 5 LA(LG(A))  &kp Z        &kp X        &c_mouse_layer     &v_snipe_layer     &kp B              &kp N                &kp M             &kp COMMA          &kp DOT      &kp FSLH             &kp ENTER
                                            &hold_lt 2 TAB     &hold_lt 1 ESCAPE  &key_lt 2 ENTER    &key_lt 2 BACKSPACE  &hold_lt 3 SPACE  &hold_lt 2 DELETE
             >;
 
@@ -309,6 +329,34 @@
 &kp TAB           &kp A  &kp S  &kp D         &kp F      &kp G             &kp H   &kp J   &kp K      &kp L    &kp SEMI  &gaming_shift_enter
 &kp LEFT_CONTROL  &kp Z  &kp X  &kp C         &kp V      &kp B             &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &gaming_enter
                                 &kp LEFT_ALT  &kp SPACE  &kp LEFT_SHIFT    &trans  &trans  &trans
+            >;
+
+            sensor-bindings =
+                <&scroll_vertical_encoder>,
+                <&scroll_horizontal_encoder>;
+        };
+
+        mouse_layer {
+            label = "mouse";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                    &mkp MB2  &mkp MB1  &mkp MB3  &trans  &trans  &trans
+            >;
+
+            sensor-bindings =
+                <&scroll_vertical_encoder>,
+                <&scroll_horizontal_encoder>;
+        };
+
+        snipe_layer {
+            label = "snipe";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                    &mkp MB2  &mkp MB1  &mkp MB3  &trans  &trans  &trans
             >;
 
             sensor-bindings =
