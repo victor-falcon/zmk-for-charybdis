@@ -345,10 +345,10 @@
         snipe_layer {
             label = "snipe";
             bindings = <
-&trans  &trans     &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp SPACE  &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
-                           &mkp MB2  &mkp MB1  &mkp MB3    &trans  &trans  &trans
+&none  &none     &none  &none    &none    &none      &none  &none  &none  &none  &none  &none
+&none  &none     &none  &none    &none    &none      &none  &none  &none  &none  &none  &none
+&none  &kp SPACE  &none  &none    &none    &none      &none  &none  &none  &none  &none  &none
+                           &mkp MB2  &mkp MB1  &mkp MB3    &none  &none  &none
             >;
 
             sensor-bindings =
@@ -359,10 +359,10 @@
         mouse_layer {
             label = "mouse";
             bindings = <
-&trans  &trans     &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp SPACE  &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
-                           &mkp MB2  &mkp MB1  &mkp MB3    &trans  &trans  &trans
+&none  &none     &none  &none    &none    &none      &none  &none  &none  &none  &none  &none
+&none  &none     &none  &none    &none    &none      &none  &none  &none  &none  &none  &none
+&none  &kp SPACE  &none  &none    &none    &none      &none  &none  &none  &none  &none  &none
+                           &mkp MB2  &mkp MB1  &mkp MB3    &none  &none  &none
             >;
 
             sensor-bindings =
