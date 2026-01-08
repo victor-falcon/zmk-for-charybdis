@@ -200,7 +200,7 @@
 &kp TAB          &kp Q        &lt 4 W      &kp E              &kp R              &kp T              &kp Y                &kp U             &kp I              &lt 4 O      &kp P                &kp BACKSPACE
 &kp ESCAPE       &hml LALT A  &hml LGUI S  &hml LEFT_SHIFT D  &hml LCTRL F       &kp G              &kp H                &hmr RCTRL J      &hmr RSHIFT K      &hmr LGUI L  &hmr LALT SEMICOLON  &sl 6
 &lt 5 LA(LG(A))  &kp Z        &kp X        &kp C              &kp V              &kp B              &kp N                &kp M             &kp COMMA          &kp DOT      &kp FSLH             &kp ENTER
-                                           &hold_lt 2 TAB     &hold_lt 1 ESCAPE  &key_lt 2 ENTER    &key_lt 2 BACKSPACE  &hold_lt 2 SPACE  &hold_lt 2 DELETE
+                                           &hold_lt 2 TAB     &hold_lt 1 ESCAPE  &key_lt 2 ENTER    &key_lt 2 BACKSPACE  &hold_lt 3 SPACE  &hold_lt 2 DELETE
             >;
 
             sensor-bindings =
