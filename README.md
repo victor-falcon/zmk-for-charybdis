@@ -22,14 +22,16 @@ Standard QWERTY with home row mods.
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │ ESC │A/ALT│S/GUI│D/SFT│F/CTL│  G  │   │  H  │J/CTL│K/SFT│L/GUI│;/ALT│ SL6 │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│L5/⌘⌥A│ Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │ENTER│
+│L5/⌘⌥A│ Z  │  X  │C/M9 │V/10 │  B  │   │  N  │  M  │  ,  │  .  │  /  │ENTER│
 └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
-                  │TAB/2│ESC/1│SPC/2│   │SPC/2│BS/3 │DEL/2│
+                  │TAB/2│ESC/1│SPC/3│   │SPC/2│BS/3 │DEL/2│
                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
 ```
 
 - **Home row mods:** Hold A/S/D/F for Alt/Gui/Shift/Ctrl (left), J/K/L/; for Ctrl/Shift/Gui/Alt (right)
 - **Combo:** Press F + J together for `caps_word`
+- **Mouse layer:** Hold C to activate mouse layer with mouse buttons on left thumb
+- **Snipe layer:** Hold V to activate snipe layer (slower trackball movement) with mouse buttons on left thumb
 
 ### Layer 1: Arrows
 
@@ -130,6 +132,34 @@ Generic gaming layout.
 - WASD navigation
 - Double-tap ESC to return to base layer
 
+### Layer 9: Mouse
+
+Mouse control layer activated by holding C.
+
+```
+┌─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│     │     │     │     │     │     │   │     │     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │     │   │     │     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │     │   │     │     │     │     │     │     │
+└─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
+                  │RCLK │LCLK │MCLK │   │     │     │     │
+                  └─────┴─────┴─────┘   └─────┴─────┴─────┘
+```
+
+- **Access:** Hold C on base layer
+- **Left thumb keys:** Right click, Left click, Middle click (left to right)
+- **Trackball:** Normal speed mouse movement
+
+### Layer 10: Snipe
+
+Precision mouse control layer activated by holding V.
+
+- **Access:** Hold V on base layer
+- **Left thumb keys:** Same as mouse layer (Right click, Left click, Middle click)
+- **Trackball:** Slower movement (snipe mode) for precise cursor control
+
 ## Encoders
 
 Both encoders provide scroll functionality on all layers:
@@ -142,6 +172,8 @@ The right half includes a PMW3610 trackball sensor with:
 - **CPI:** 1200 (normal), 200 (snipe mode)
 - **Orientation:** 90° rotation, X-axis inverted
 - **Polling rate:** 125Hz
+- **Scroll mode:** Enabled on layer 2 (Numbers & Functions)
+- **Snipe mode:** Enabled on layer 10 (Snipe layer) - slower movement for precision
 
 ## Building
 
