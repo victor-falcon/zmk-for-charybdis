@@ -9,12 +9,10 @@
 #include <dt-bindings/zmk/rgb.h>
 
 // Trackball scroll settings
-
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 12
 
 // Layer-tap settings (from Corne)
-
 &lt {
     tapping-term-ms = <300>;
     flavor = "tap-preferred";
@@ -24,9 +22,7 @@
 };
 
 // Trackball input processors
-
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
