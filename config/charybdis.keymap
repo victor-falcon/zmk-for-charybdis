@@ -9,10 +9,12 @@
 #include <dt-bindings/zmk/rgb.h>
 
 // Trackball scroll settings
+
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 12
 
 // Layer-tap settings (from Corne)
+
 &lt {
     tapping-term-ms = <300>;
     flavor = "tap-preferred";
@@ -22,7 +24,9 @@
 };
 
 // Trackball input processors
+
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
+
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
@@ -173,6 +177,7 @@
             label = "C_MOUSE_LAYER";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
+
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             quick-tap-ms = <200>;
@@ -183,6 +188,7 @@
             label = "V_SNIPE_LAYER";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
+
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             quick-tap-ms = <200>;
@@ -213,10 +219,10 @@
         default_layer {
             label = "falcon";
             bindings = <
-&kp TAB          &kp Q        &lt 4 W      &kp E              &kp R              &kp T              &kp Y                &kp U             &kp I              &lt 4 O      &kp P                &kp BACKSPACE
-&kp ESCAPE       &hml LALT A  &hml LGUI S  &hml LEFT_SHIFT D  &hml LCTRL F       &kp G              &kp H                &hmr RCTRL J      &hmr RSHIFT K      &hmr LGUI L  &hmr LALT SEMICOLON  &sl 6
-&lt 5 LA(LG(A))  &kp Z        &kp X        &c_mouse_layer 9 C  &v_snipe_layer 10 V  &kp B              &kp N                &kp M             &kp COMMA          &kp DOT      &kp FSLH             &kp ENTER
-                                           &hold_lt 2 TAB     &hold_lt 1 ESCAPE  &key_lt 2 ENTER    &key_lt 2 BACKSPACE  &hold_lt 3 SPACE  &hold_lt 2 DELETE
+&kp TAB          &kp Q        &lt 4 W      &kp E                &kp R               &kp T              &kp Y                &kp U             &kp I              &lt 4 O      &kp P                &kp BACKSPACE
+&kp ESCAPE       &hml LALT A  &hml LGUI S  &hml LEFT_SHIFT D    &hml LCTRL F        &kp G              &kp H                &hmr RCTRL J      &hmr RSHIFT K      &hmr LGUI L  &hmr LALT SEMICOLON  &sl 6
+&lt 5 LA(LG(A))  &kp Z        &kp X        &c_mouse_layer 10 C  &v_snipe_layer 9 V  &kp B              &kp N                &kp M             &kp COMMA          &kp DOT      &kp FSLH             &kp ENTER
+                                           &hold_lt 2 TAB       &hold_lt 1 ESCAPE   &key_lt 2 ENTER    &key_lt 2 BACKSPACE  &hold_lt 3 SPACE  &hold_lt 2 DELETE
             >;
 
             sensor-bindings =
@@ -336,13 +342,13 @@
                 <&scroll_horizontal_encoder>;
         };
 
-        mouse_layer {
-            label = "mouse";
+        snipe_layer {
+            label = "snipe";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                    &mkp MB2  &mkp MB1  &mkp MB3  &trans  &trans  &trans
+&trans  &trans     &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp SPACE  &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
+                           &mkp MB2  &mkp MB1  &mkp MB3    &trans  &trans  &trans
             >;
 
             sensor-bindings =
@@ -350,13 +356,13 @@
                 <&scroll_horizontal_encoder>;
         };
 
-        snipe_layer {
-            label = "snipe";
+        mouse_layer {
+            label = "mouse";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                    &mkp MB2  &mkp MB1  &mkp MB3  &trans  &trans  &trans
+&trans  &trans     &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp SPACE  &trans  &trans    &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
+                           &mkp MB2  &mkp MB1  &mkp MB3    &trans  &trans  &trans
             >;
 
             sensor-bindings =
