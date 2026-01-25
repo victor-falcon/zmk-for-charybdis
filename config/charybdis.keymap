@@ -219,10 +219,10 @@
         default_layer {
             label = "falcon";
             bindings = <
-&kp TAB          &kp Q        &lt 4 W      &kp E                &kp R               &kp T             &kp Y                 &kp U            &kp I              &lt 4 O      &kp P                &kp BACKSPACE
-&kp ESCAPE       &hml LALT A  &hml LGUI S  &hml LEFT_SHIFT D    &hml LCTRL F        &kp G             &kp H                 &hmr RCTRL J     &hmr RSHIFT K      &hmr LGUI L  &hmr LALT SEMICOLON  &sl 6
-&lt 5 LA(LG(A))  &kp Z        &kp X        &c_scroll_layer 2 C  &v_snipe_layer 9 V  &kp B             &kp N                 &kp M            &kp COMMA          &kp DOT      &kp FSLH             &kp ENTER
-                                           &hold_lt 2 TAB       &key_lt 1 SPACE     &hold_lt 2 ESC    &hold_lt 2 BACKSPACE  &key_lt 3 SPACE  &hold_lt 2 DELETE
+&kp TAB          &kp Q        &lt 4 W      &kp E                &kp R               &kp T             &kp Y             &kp U            &kp I              &lt 4 O      &kp P                &kp BACKSPACE
+&kp ESCAPE       &hml LALT A  &hml LGUI S  &hml LEFT_SHIFT D    &hml LCTRL F        &kp G             &kp H             &hmr RCTRL J     &hmr RSHIFT K      &hmr LGUI L  &hmr LALT SEMICOLON  &sl 6
+&lt 5 LA(LG(A))  &kp Z        &kp X        &c_scroll_layer 2 C  &v_snipe_layer 9 V  &kp B             &kp N             &kp M            &kp COMMA          &kp DOT      &kp FSLH             &kp ENTER
+                                           &hold_lt 2 TAB       &key_lt 1 SPACE     &hold_lt 2 ESC    &hold_lt 2 ENTER  &key_lt 3 SPACE  &hold_lt 2 DELETE
             >;
 
             sensor-bindings =
@@ -233,10 +233,10 @@
         arrows {
             label = "arrows";
             bindings = <
-&trans  &kp LG(Q)     &kp LG(W)     &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &trans    &kp HOME       &kp PG_DN  &kp PG_UP  &kp END       &kp LG(PLUS)   &kp BACKSPACE
-&trans  &kp LALT      &kp LGUI      &kp LSHFT         &kp LCTRL          &trans    &kp LEFT       &kp DOWN   &kp UP     &kp RIGHT     &kp LG(N0)     &kp DELETE
-&trans  &kp LC(DOWN)  &kp LC(LEFT)  &kp LC(UP)        &kp LC(RIGHT)      &trans    &kp LG(LBKT)   &trans     &trans     &kp LG(RBKT)  &kp LG(MINUS)  &trans
-                                    &kp TAB           &trans             &trans    &kp BACKSPACE  &kp SPACE  &kp DEL
+&trans  &kp LG(Q)     &kp LG(W)     &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &trans    &kp HOME      &kp PG_DN  &kp PG_UP  &kp END       &kp LG(PLUS)   &kp BACKSPACE
+&trans  &kp LALT      &kp LGUI      &kp LSHFT         &kp LCTRL          &trans    &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT     &kp LG(N0)     &kp DELETE
+&trans  &kp LC(DOWN)  &kp LC(LEFT)  &kp LC(UP)        &kp LC(RIGHT)      &trans    &kp LG(LBKT)  &trans     &trans     &kp LG(RBKT)  &kp LG(MINUS)  &trans
+                                    &kp TAB           &trans             &trans    &kp ENTER     &kp SPACE  &kp DEL
             >;
 
             sensor-bindings =
