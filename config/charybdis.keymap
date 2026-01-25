@@ -113,7 +113,8 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             hold-trigger-on-release;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <100>;
+            require-prior-idle-ms = <150>;
         };
 
         hmr: hmr {
@@ -125,7 +126,8 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             hold-trigger-on-release;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <100>;
+            require-prior-idle-ms = <150>;
         };
 
         key_lt: key_lt {
@@ -137,6 +139,8 @@
             tapping-term-ms = <250>;
             flavor = "tap-preferred";
             require-prior-idle-ms = <200>;
+            retro-tap;
+            quick-tap-ms = <100>;
         };
 
         hold_lt: hold_lt {
@@ -146,7 +150,8 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <100>;
+            require-prior-idle-ms = <150>;
         };
 
         td_b_p: td_b_p {
