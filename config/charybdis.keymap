@@ -101,6 +101,13 @@
             bindings = <&kp APOSTROPHE &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "APOSTROPHE_AND_KEY";
         };
+
+        codeblock: codeblock {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp LEFT_ARROW &kp LEFT &kp LEFT>;
+            label = "CODEBLOCK";
+        };
     };
 
     behaviors {
@@ -262,7 +269,7 @@
             bindings = <
 &kp LS(LA(N8))  &kp EXCLAMATION    &kp AT_SIGN  &kp HASH       &kp DOLLAR    &kp PERCENT             &kp CARET  &kp AMPERSAND  &kp ASTERISK            &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSPACE
 &kp TILDE       &kp GRAVE          &kp SQT      &kp LS(LBRC)   &kp LS(RBRC)  &kp LS(LA(NUMBER_2))    &kp PIPE   &kp MINUS      &hmr RIGHT_SHIFT EQUAL  &kp LBKT              &kp RBKT               &kp DELETE
-&trans          &kp LA(LS(SLASH))  &kp LA(N1)   &php_equalize  &php_arrow    &trans                  &n_tilde   &kp UNDER      &kp PLUS                &kp DOT               &kp BSLH               &trans
+&codeblock      &kp LA(LS(SLASH))  &kp LA(N1)   &php_equalize  &php_arrow    &trans                  &n_tilde   &kp UNDER      &kp PLUS                &kp DOT               &kp BSLH               &trans
                                                 &trans         &trans        &trans                  &trans     &trans         &trans
             >;
 
