@@ -136,7 +136,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <250>;
             flavor = "tap-preferred";
-            require-prior-idle-ms = <200>;
         };
 
         hold_lt: hold_lt {
