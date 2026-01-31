@@ -1,0 +1,64 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    charybdis_physical_layout: charybdis_physical_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Charybdis 4x6";
+
+        kscan = <&kscan0>;
+        transform = <&default_transform>;
+
+        keys  //                  w    h    x    y     rot   rx   ry
+            // Row 0 - Left half
+            = <&key_physical_attrs 100 100    0   38      0    0    0>   // RC(0,0)
+            , <&key_physical_attrs 100 100  100   38      0    0    0>   // RC(0,1)
+            , <&key_physical_attrs 100 100  200   12      0    0    0>   // RC(0,2)
+            , <&key_physical_attrs 100 100  300    0      0    0    0>   // RC(0,3)
+            , <&key_physical_attrs 100 100  400   12      0    0    0>   // RC(0,4)
+            , <&key_physical_attrs 100 100  500   24      0    0    0>   // RC(0,5)
+            // Row 0 - Right half
+            , <&key_physical_attrs 100 100  900   24      0    0    0>   // RC(0,11)
+            , <&key_physical_attrs 100 100 1000   12      0    0    0>   // RC(0,10)
+            , <&key_physical_attrs 100 100 1100    0      0    0    0>   // RC(0,9)
+            , <&key_physical_attrs 100 100 1200   12      0    0    0>   // RC(0,8)
+            , <&key_physical_attrs 100 100 1300   38      0    0    0>   // RC(0,7)
+            , <&key_physical_attrs 100 100 1400   38      0    0    0>   // RC(0,6)
+            // Row 1 - Left half
+            , <&key_physical_attrs 100 100    0  138      0    0    0>   // RC(1,0)
+            , <&key_physical_attrs 100 100  100  138      0    0    0>   // RC(1,1)
+            , <&key_physical_attrs 100 100  200  112      0    0    0>   // RC(1,2)
+            , <&key_physical_attrs 100 100  300  100      0    0    0>   // RC(1,3)
+            , <&key_physical_attrs 100 100  400  112      0    0    0>   // RC(1,4)
+            , <&key_physical_attrs 100 100  500  124      0    0    0>   // RC(1,5)
+            // Row 1 - Right half
+            , <&key_physical_attrs 100 100  900  124      0    0    0>   // RC(1,11)
+            , <&key_physical_attrs 100 100 1000  112      0    0    0>   // RC(1,10)
+            , <&key_physical_attrs 100 100 1100  100      0    0    0>   // RC(1,9)
+            , <&key_physical_attrs 100 100 1200  112      0    0    0>   // RC(1,8)
+            , <&key_physical_attrs 100 100 1300  138      0    0    0>   // RC(1,7)
+            , <&key_physical_attrs 100 100 1400  138      0    0    0>   // RC(1,6)
+            // Row 2 - Left half
+            , <&key_physical_attrs 100 100    0  238      0    0    0>   // RC(2,0)
+            , <&key_physical_attrs 100 100  100  238      0    0    0>   // RC(2,1)
+            , <&key_physical_attrs 100 100  200  212      0    0    0>   // RC(2,2)
+            , <&key_physical_attrs 100 100  300  200      0    0    0>   // RC(2,3)
+            , <&key_physical_attrs 100 100  400  212      0    0    0>   // RC(2,4)
+            , <&key_physical_attrs 100 100  500  224      0    0    0>   // RC(2,5)
+            // Row 2 - Right half
+            , <&key_physical_attrs 100 100  900  224      0    0    0>   // RC(2,11)
+            , <&key_physical_attrs 100 100 1000  212      0    0    0>   // RC(2,10)
+            , <&key_physical_attrs 100 100 1100  200      0    0    0>   // RC(2,9)
+            , <&key_physical_attrs 100 100 1200  212      0    0    0>   // RC(2,8)
+            , <&key_physical_attrs 100 100 1300  238      0    0    0>   // RC(2,7)
+            , <&key_physical_attrs 100 100 1400  238      0    0    0>   // RC(2,6)
+            // Row 3 - Left thumb cluster
+            , <&key_physical_attrs 100 100  350  320   1500  500  420>   // RC(3,3)
+            , <&key_physical_attrs 100 100  440  335   1500  500  420>   // RC(3,4)
+            , <&key_physical_attrs 100 100  530  360   1500  500  420>   // RC(3,5)
+            // Row 3 - Right thumb cluster
+            , <&key_physical_attrs 100 100  870  360 (-1500) 900  420>   // RC(3,11)
+            , <&key_physical_attrs 100 100  960  335 (-1500) 900  420>   // RC(3,10)
+            , <&key_physical_attrs 100 100 1050  320 (-1500) 900  420>   // RC(3,9)
+            ;
+    };
+};
