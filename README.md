@@ -10,6 +10,17 @@ ZMK firmware configuration for a Charybdis 4x6 split ergonomic keyboard with tra
 - **RGB:** WS2812 underglow (21 LEDs)
 - **Layout:** 42 keys (3x6 + 3 thumb keys per side)
 
+## ZMK Studio
+
+The right half (central) is built with [ZMK Studio](https://zmk.studio/) support for runtime keymap editing over USB.
+
+1. Connect the right half via USB
+2. Open https://zmk.studio/ in Chrome/Edge
+3. Navigate to the adjust layer (layer 5) and press the Studio Unlock key (right inner home row) to unlock
+4. Edit keymaps without reflashing
+
+> **Note:** Once changes are made via Studio, `.keymap` file edits require a "Restore Stock Settings" action in Studio to take effect.
+
 ## Layers
 
 ### Layer 0: Base (falcon)
@@ -22,16 +33,17 @@ Standard QWERTY with home row mods.
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │ ESC │A/ALT│S/GUI│D/SFT│F/CTL│  G  │   │  H  │J/CTL│K/SFT│L/GUI│;/ALT│ SL6 │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│L5/⌘⌥A│ Z  │  X  │C/M9 │V/10 │  B  │   │  N  │  M  │  ,  │  .  │  /  │ENTER│
+│L5/⌘⌥A│ Z  │  X  │C/L2 │V/L9 │  B  │   │  N  │  M  │  ,  │  .  │  /  │ENTER│
 └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
-                  │TAB/2│ESC/1│SPC/3│   │SPC/2│BS/3 │DEL/2│
+                  │TAB/2│SPC/1│ENT/2│   │DEL/2│SPC/3│     │
                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
 ```
 
-- **Home row mods:** Hold A/S/D/F for Alt/Gui/Shift/Ctrl (left), J/K/L/; for Ctrl/Shift/Gui/Alt (right)
+- **Home row mods:** Hold A/S/D/F for Alt/Gui/Shift/Ctrl (left), J/K/L/; for Ctrl/Shift/Gui/Alt (right). Uses `require-prior-idle-ms` to prevent missed keypresses during fast typing.
 - **Combo:** Press F + J together for `caps_word`
-- **Mouse layer:** Hold C to activate mouse layer with mouse buttons on left thumb
-- **Snipe layer:** Hold V to activate snipe layer (slower trackball movement) with mouse buttons on left thumb
+- **Scroll layer:** Hold C to activate layer 2 (trackball enters scroll mode)
+- **Snipe layer:** Hold V to activate layer 9 (slower trackball movement) with mouse buttons on thumb cluster
+- **Thumb cluster:** `SPC/1` and `SPC/3` use `balanced` flavor with `require-prior-idle-ms` — always Space during fast typing, hold for layer after a brief pause
 
 ### Layer 1: Arrows
 
@@ -45,23 +57,23 @@ Navigation and window management.
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │ ^↓  │ ^←  │ ^↑  │ ^→  │     │   │ ⌘[  │     │     │ ⌘]  │ ⌘-  │     │
 └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
-                  │ TAB │     │SPACE│   │SPACE│BKSP │ DEL │
+                  │ TAB │     │     │   │ENTER│SPACE│ DEL │
                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
 ```
 
 ### Layer 2: Numbers & Functions
 
-Function keys and numpad.
+Function keys and numpad. Trackball enters scroll mode on this layer.
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│     │ F1  │ F2  │ F3  │ F4  │ ⏯️  │   │  +  │  7  │  8  │  9  │  *  │BKSP │
+│     │ F1  │ F2  │ F3  │ F4  │ ⏯   │   │  +  │  7  │  8  │  9  │  *  │BKSP │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │F5/⌥ │F6/⌘ │F7/⇧ │F8/^ │ 🔊  │   │  -  │4/CTL│5/SFT│6/GUI│ /   │ DEL │
+│     │F5/⌥ │F6/⌘ │F7/⇧ │F8/^ │ VOL+│   │  -  │4/CTL│5/SFT│6/GUI│//ALT│ DEL │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │ F9  │ F10 │ F11 │ F12 │ 🔉  │   │     │  1  │  2  │  3  │  .  │     │
+│     │ F9  │ F10 │ F11 │ F12 │ VOL-│   │  ,  │  1  │  2  │  3  │  .  │     │
 └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
-                  │ TAB │ ESC │     │   │SPACE│  0  │  ,  │
+                  │     │     │     │   │SPACE│  0  │  ,  │
                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
 ```
 
@@ -75,13 +87,13 @@ Programming symbols and macros.
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │  ~  │  `  │  '  │  {  │  }  │ ⌥⇧2 │   │  |  │  -  │=/SFT│  [  │  ]  │ DEL │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │ ⌥⇧/ │ ⌥1  │ =>  │ ->  │     │   │  ñ  │  _  │  +  │  .  │  \  │     │
+│ ``` │ ⌥⇧/ │ ⌥1  │ =>  │ ->  │     │   │  ñ  │  _  │  +  │  .  │  \  │     │
 └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
-                  │ TAB │ ESC │SPACE│   │SPACE│     │ DEL │
+                  │     │     │     │   │     │     │     │
                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
 ```
 
-- **Macros:** `->` (PHP arrow), `=>` (PHP fat arrow), `ñ` (Spanish tilde)
+- **Macros:** `->` (PHP arrow), `=>` (PHP fat arrow), `ñ` (Spanish tilde), ` `````` ` (codeblock)
 
 ### Layer 4: Shortcuts
 
@@ -91,13 +103,13 @@ Access by holding W or O on the base layer.
 
 ### Layer 5: Adjust
 
-System settings, RGB, and Bluetooth.
+System settings, RGB, Bluetooth, and ZMK Studio.
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┐
 │     │ RGB │     │EP ON│EPOFF│RESET│   │RESET│     │     │     │BTCLR│     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │ HUE+│ BRI+│ EFF+│ SPD+│     │   │     │     │     │     │     │     │
+│     │ HUE+│ BRI+│ EFF+│ SPD+│     │   │UNLCK│     │     │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │ SAT-│ BRI-│ EFF-│ SPD-│     │   │     │ BT0 │ BT1 │ BT2 │ BT3 │     │
 └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
@@ -106,6 +118,7 @@ System settings, RGB, and Bluetooth.
 ```
 
 - **Access:** Hold bottom-left key on base layer
+- **UNLCK:** ZMK Studio unlock (right inner home row)
 - **Gaming layers:** Left thumb keys switch to LOL (L7) or Gaming (L8)
 
 ### Layer 6: Accents
@@ -132,33 +145,25 @@ Generic gaming layout.
 - WASD navigation
 - Double-tap ESC to return to base layer
 
-### Layer 9: Mouse
+### Layer 9: Snipe
 
-Mouse control layer activated by holding C.
+Precision mouse control layer activated by holding V on the base layer.
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┐
 │     │     │     │     │     │     │   │     │     │     │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │     │     │     │     │     │   │     │     │     │     │     │     │
+│ ESC │ ALT │ GUI │SHIFT│     │     │   │     │CTRL │SHIFT│ GUI │ ALT │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │     │     │     │     │     │   │     │     │     │     │     │     │
+│     │SPACE│     │     │     │     │   │     │SPACE│     │     │     │     │
 └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
-                  │RCLK │LCLK │MCLK │   │     │     │     │
+                  │RCLK │LCLK │MCLK │   │     │SPACE│     │
                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
 ```
 
-- **Access:** Hold C on base layer
-- **Left thumb keys:** Right click, Left click, Middle click (left to right)
-- **Trackball:** Normal speed mouse movement
-
-### Layer 10: Snipe
-
-Precision mouse control layer activated by holding V.
-
-- **Access:** Hold V on base layer
-- **Left thumb keys:** Same as mouse layer (Right click, Left click, Middle click)
 - **Trackball:** Slower movement (snipe mode) for precise cursor control
+- **Left thumb:** Right click, Left click, Middle click
+- **Modifiers:** Home row modifiers on both halves for click + modifier combos
 
 ## Encoders
 
@@ -172,12 +177,14 @@ The right half includes a PMW3610 trackball sensor with:
 - **CPI:** 1200 (normal), 200 (snipe mode)
 - **Orientation:** 90° rotation, X-axis inverted
 - **Polling rate:** 125Hz
-- **Scroll mode:** Enabled on layer 2 (Numbers & Functions)
-- **Snipe mode:** Enabled on layer 10 (Snipe layer) - slower movement for precision
+- **Scroll mode:** Enabled on layer 2 (Numbers & Functions) via hold-C
+- **Snipe mode:** Enabled on layer 9 (Snipe layer) via hold-V
 
 ## Building
 
-Firmware builds automatically via GitHub Actions on push. Download the `.uf2` files from the Actions artifacts and flash to each half:
+Firmware builds automatically via GitHub Actions on push. The right half is built with the `studio-rpc-usb-uart` snippet and `CONFIG_ZMK_STUDIO=y` for ZMK Studio support.
+
+Download the `.uf2` files from the Actions artifacts and flash to each half:
 
 1. Connect keyboard half via USB
 2. Double-tap reset button to enter bootloader
