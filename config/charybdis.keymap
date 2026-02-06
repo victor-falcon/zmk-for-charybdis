@@ -121,7 +121,7 @@
             flavor = "tap-preferred";
             hold-trigger-on-release;
             quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <100>;
         };
 
         hmr: hmr {
@@ -134,7 +134,7 @@
             flavor = "tap-preferred";
             hold-trigger-on-release;
             quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <100>;
         };
 
         key_lt: key_lt {
@@ -312,10 +312,10 @@
         adjust {
             label = "adjust";
             bindings = <
-&none  &rgb_ug RGB_TOG  &none            &ext_power EP_ON  &ext_power EP_OFF  &sys_reset    &sys_reset  &none         &none         &none         &bt BT_CLR    &none
+&none  &rgb_ug RGB_TOG  &none            &ext_power EP_ON  &ext_power EP_OFF  &sys_reset    &sys_reset      &none         &none         &none         &bt BT_CLR    &none
 &none  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_SPI    &none         &studio_unlock  &none         &none         &none         &none         &none
-&none  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR   &rgb_ug RGB_SPD    &none         &none       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
-                                         &to 8             &to 7              &none         &none       &none         &none
+&none  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR   &rgb_ug RGB_SPD    &none         &none           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
+                                         &to 8             &to 7              &none         &none           &none         &none
             >;
 
             sensor-bindings =
