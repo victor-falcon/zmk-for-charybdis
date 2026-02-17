@@ -202,6 +202,15 @@
             quick-tap-ms = <165>;
             hold-trigger-on-release;
         };
+
+        sl_mo_lt: sl_mo_lt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SL_MO_LT";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     // Encoder behaviors
@@ -231,7 +240,7 @@
 &kp TAB          &kp Q       &lt 4 W     &kp E                    &kp R               &kp T               &kp Y           &kp U        &kp I                &lt 4 O     &kp P               &kp BACKSPACE
 &kp ESCAPE       &hm LALT A  &hm LGUI S  &shift_hmr LEFT_SHIFT D  &hm LCTRL F         &kp G               &kp H           &hm RCTRL J  &shift_hmr RSHIFT K  &hm LGUI L  &hm LALT SEMICOLON  &sl 6
 &lt 5 LA(LG(A))  &kp Z       &kp X       &c_scroll_layer 2 C      &v_snipe_layer 9 V  &kp B               &kp N           &kp M        &kp COMMA            &kp DOT     &kp FSLH            &kp ENTER
-                                         &hold_lt 2 TAB           &key_lt 1 SPACE     &hold_lt 3 ENTER    &hold_lt 2 DEL  &kp SPACE    &none
+                                         &hold_lt 2 TAB           &key_lt 1 SPACE     &sl_mo_lt 3 3      &hold_lt 2 DEL  &kp SPACE    &none
             >;
 
             sensor-bindings =
