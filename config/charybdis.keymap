@@ -322,8 +322,8 @@
             label = "accents";
             bindings = <
 &trans  &apostrophe_and_key Q  &apostrophe_and_key W  &mac_adcent E          &apostrophe_and_key R  &apostrophe_and_key T    &apostrophe_and_key Y  &mac_adcent U          &mac_adcent I          &mac_adcent O          &apostrophe_and_key P  &trans
-&to 0   &mac_adcent A          &apostrophe_and_key S  &apostrophe_and_key D  &apostrophe_and_key F  &apostrophe_and_key G    &apostrophe_and_key H  &apostrophe_and_key J  &apostrophe_and_key K  &apostrophe_and_key L  &trans                 &trans
-&trans  &apostrophe_and_key Z  &apostrophe_and_key X  &apostrophe_and_key C  &apostrophe_and_key V  &apostrophe_and_key B    &apostrophe_and_key N  &apostrophe_and_key M  &trans                 &trans                 &trans                 &trans
+&to 0   &mac_adcent A          &apostrophe_and_key S  &apostrophe_and_key D  &apostrophe_and_key F  &apostrophe_and_key G    &apostrophe_and_key H  &apostrophe_and_key J  &apostrophe_and_key K  &apostrophe_and_key L  &apostrophe_and_key SEMICOLON  &kp APOSTROPHE
+&trans  &apostrophe_and_key Z  &apostrophe_and_key X  &apostrophe_and_key C  &apostrophe_and_key V  &apostrophe_and_key B    &apostrophe_and_key N  &apostrophe_and_key M  &apostrophe_and_key COMMA  &apostrophe_and_key DOT  &apostrophe_and_key FSLH  &trans
                                                       &to 0                  &to 0                  &trans                   &trans                 &to 0                  &to 0
             >;
 
